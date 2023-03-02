@@ -2,6 +2,7 @@
 import 'package:bloc_with_depandency/presentation/screen/fourth_screen.dart';
 import 'package:bloc_with_depandency/presentation/screen/home_screen.dart';
 import 'package:bloc_with_depandency/presentation/screen/second_screen.dart';
+import 'package:bloc_with_depandency/presentation/screen/splash_screen.dart';
 import 'package:bloc_with_depandency/presentation/screen/third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +19,7 @@ class AppRouter {
       case '/':
       return MaterialPageRoute(builder: (_) => BlocProvider.value(
         value: _counterCubit,
-        child: MyHomePage(title: 'Home Page'),
+        child: SplashScreen(),
       ));
       case '/second':
         return MaterialPageRoute(builder: (_) => BlocProvider.value(
