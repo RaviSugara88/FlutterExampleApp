@@ -23,6 +23,59 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton:FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.black87,
+        foregroundColor: Colors.yellow,
+        elevation: 10,
+        mini: false,
+      ),
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 5.0 ,
+        shape: CircularNotchedRectangle(),
+        color: Colors.black87,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(padding: EdgeInsets.only(left: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.home,color: Colors.white,),
+                  Text("Home",style: TextStyle(color: Colors.white),)
+                ],
+              ),),
+            Padding(padding: EdgeInsets.only(right:10.0,top: 10.0,bottom: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.settings,color: Colors.white,),
+                  Text("settings",style: TextStyle(color: Colors.white),)
+                ],
+              ),),
+            Padding(padding:const EdgeInsets.only(right: 10.0,top: 10.0,bottom: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.details,color: Colors.white,),
+                  Text("Detail",style: TextStyle(color: Colors.white),)
+                ],
+              ),),
+            Padding(padding: EdgeInsets.only(left: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.link,color: Colors.white,),
+                  Text("Link",style: TextStyle(color: Colors.white),)
+                ],
+              ),),
+
+          ],
+        ),
+      ),
       body: BlocBuilder<CounterCubit, int>(
         builder: (context, count) => Column(
           children: [
@@ -61,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: Row(
+    /*  floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
@@ -76,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Icon(Icons.remove),
           )
         ],
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), */// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
